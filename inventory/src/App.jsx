@@ -21,62 +21,7 @@ function App() {
   const [activeTab, setActiveTab] = useState('collection')
   const [toast, setToast] = useState(null)
   const [karma, setKarma] = useState("loading...")
-  
-  // TODO: REMOVE MOCK DATA - This is only for testing
-  const [inventory, setInventory] = useState([
-    // Mock cards for testing - REMOVE WHEN REAL DATA IS IMPLEMENTED
-    {
-      id: 1,
-      ...getCardByKey('spez'),
-      quantity: 1
-    },
-    {
-      id: 2,
-      ...getCardByKey('angrysnoo'),
-      quantity: 2
-    },
-    {
-      id: 3,
-      ...getCardByKey('ghostsnoo'),
-      quantity: 1
-    },
-    {
-      id: 4,
-      ...getCardByKey('devvitduck'),
-      quantity: 3
-    },
-    {
-      id: 5,
-      ...getCardByKey('mod'),
-      quantity: 1
-    },
-    {
-      id: 6,
-      ...getCardByKey('normalprize'),
-      quantity: 1
-    },
-    {
-      id: 7,
-      ...getCardByKey('karmaprize'),
-      quantity: 2
-    },
-    {
-      id: 8,
-      ...getCardByKey('upvote'),
-      quantity: 4
-    },
-    {
-      id: 9,
-      ...getCardByKey('banhammer'),
-      quantity: 1
-    },
-    {
-      id: 10,
-      ...getCardByKey('boosterpack'),
-      quantity: 3
-    }
-  ])
-  
+  const [inventory, setInventory] = useState([])
   const [isLoadingCards, setIsLoadingCards] = useState(true)
   const [selectedCard, setSelectedCard] = useState(null)
   const [packOpening, setPackOpening] = useState({
@@ -120,15 +65,8 @@ function App() {
   }, [inventory])
 
   useEffect(() => {
-    // TODO: REMOVE - Mock data setup for testing
-    // Simulate loading completion after a short delay
-    setTimeout(() => {
-      setIsLoadingCards(false)
-      setKarma(12500) // Mock karma value
-    }, 1000)
-    
-    // Show loading toast initially (will be hidden by mock timeout)
-    setToast({ message: 'Loading...', type: 'info' })
+    // Show loading toast initially
+    setToast({ message: 'Loading inventory...', type: 'info' })
     
     // Send webview_ready_inventory message after mount
     window.parent.postMessage(
@@ -143,6 +81,7 @@ function App() {
       const message = deepFindMessage(event.data);
       if (!message) return;
       const { type, data } = message;
+      
       if (type === "balance_update") {
         setKarma(data);
       } else if (type === "cards_update") {
@@ -258,9 +197,12 @@ function App() {
     
     // Send updated inventory to parent immediately after pack opening
     setTimeout(() => {
-      const cardList = convertInventoryToCardList(inventory)
-      window.parent.postMessage({ type: 'inventory_update', data: cardList }, '*')
-    })
+      setInventory(currentInventory => {
+        const cardList = convertInventoryToCardList(currentInventory)
+        window.parent.postMessage({ type: 'inventory_update', data: cardList }, '*')
+        return currentInventory
+      })
+    }, 100)
     
     // Close the card detail panel
     setSelectedCard(null)
