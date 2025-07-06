@@ -1,6 +1,4 @@
 import CollectionScreen from './screens/CollectionScreen'
-import RarityScreen from './screens/RarityScreen'
-import RecentScreen from './screens/RecentScreen'
 import './MainDiv.css'
 
 const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard, isLoadingCards = false }) => {

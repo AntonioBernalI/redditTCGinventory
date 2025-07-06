@@ -63,17 +63,6 @@ const CardDetailPanel = ({ card, onClose }) => {
               <span className="stat-value">{card.quantity}</span>
             </div>
             
-            <div className="detail-stat">
-              <span className="stat-label">ACQUIRED:</span>
-              <span className="stat-value">
-                {new Date(card.dateAcquired).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </span>
-            </div>
-            
             {card.karma && (
               <div className="detail-stat">
                 <span className="stat-label">KARMA:</span>

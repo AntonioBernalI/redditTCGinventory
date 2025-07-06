@@ -25,62 +25,52 @@ function App() {
     {
       id: 1,
       ...getCardByKey('spez'),
-      quantity: 1,
-      dateAcquired: '2024-01-15'
+      quantity: 1
     },
     {
       id: 2,
       ...getCardByKey('angrysnoo'),
-      quantity: 2,
-      dateAcquired: '2024-01-10'
+      quantity: 2
     },
     {
       id: 3,
       ...getCardByKey('ghostsnoo'),
-      quantity: 1,
-      dateAcquired: '2024-01-08'
+      quantity: 1
     },
     {
       id: 4,
       ...getCardByKey('devvitduck'),
-      quantity: 3,
-      dateAcquired: '2024-01-05'
+      quantity: 3
     },
     {
       id: 5,
       ...getCardByKey('mod'),
-      quantity: 1,
-      dateAcquired: '2024-01-12'
+      quantity: 1
     },
     {
       id: 6,
       ...getCardByKey('normalprize'),
-      quantity: 1,
-      dateAcquired: '2024-01-14'
+      quantity: 1
     },
     {
       id: 7,
       ...getCardByKey('karmaprize'),
-      quantity: 2,
-      dateAcquired: '2024-01-11'
+      quantity: 2
     },
     {
       id: 8,
       ...getCardByKey('upvote'),
-      quantity: 4,
-      dateAcquired: '2024-01-09'
+      quantity: 4
     },
     {
       id: 9,
       ...getCardByKey('banhammer'),
-      quantity: 1,
-      dateAcquired: '2024-01-13'
+      quantity: 1
     },
     {
       id: 10,
       ...getCardByKey('boosterpack'),
-      quantity: 3,
-      dateAcquired: '2024-01-16'
+      quantity: 3
     }
   ])
   
@@ -134,8 +124,7 @@ function App() {
           return {
             id: index + 1,
             ...cardData,
-            quantity,
-            dateAcquired: new Date().toISOString().split('T')[0] // Today's date as placeholder
+            quantity
           };
         }).filter(Boolean); // Remove null entries
         
@@ -171,8 +160,7 @@ function App() {
         return [...prev, { 
           ...item, 
           id: Date.now(), 
-          quantity: 1, 
-          dateAcquired: new Date().toISOString().split('T')[0] 
+          quantity: 1
         }]
       }
     })
