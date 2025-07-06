@@ -1,0 +1,65 @@
+.main-div {
+  position: relative;
+  width: 70%;
+  height: 80%;
+  border-radius: 5px;
+  border: 5px solid #ff5801;
+  background-color: rgba(18, 103, 154, 0.77);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.main-div::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  right: 12px;
+  height: 30%;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.content-screen {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.content-screen::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content-screen::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.content-screen::-webkit-scrollbar-thumb {
+  background: #ff5801;
+  border-radius: 4px;
+}
+
+.content-screen::-webkit-scrollbar-thumb:hover {
+  background: #ff4500;
+}
+
+@media (max-width: 710px) {
+  .main-div {
+    width: 80%;
+    height: 90%;
+  }
+  
+  .content-screen {
+    padding: 15px;
+  }
+}

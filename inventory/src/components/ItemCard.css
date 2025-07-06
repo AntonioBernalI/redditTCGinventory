@@ -1,0 +1,257 @@
+.item-card {
+  width: 200px;
+  height: 280px;
+  background: linear-gradient(145deg, rgba(18, 103, 154, 0.9), rgba(18, 103, 154, 1));
+  border: 3px solid #ff5801;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease;
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.item-card::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 12px;
+  right: 12px;
+  height: 25%;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.item-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.item-card.owned {
+  border-color: #32cd32;
+  background: linear-gradient(145deg, rgba(50, 205, 50, 0.2), rgba(34, 139, 34, 0.3));
+}
+
+.card-image-container {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.item-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.rarity-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.card-name {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.card-price {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: linear-gradient(145deg, #ffd700, #ffb300);
+  border: 2px solid #ff8c00;
+  border-radius: 15px;
+  color: #000;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  position: relative;
+}
+
+.card-price::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  right: 6px;
+  height: 30%;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  opacity: 0.8;
+}
+
+.price-icon {
+  font-size: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.price-amount {
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+.purchase-button {
+  padding: 10px 15px;
+  border: 2px solid;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  position: relative;
+  margin-top: auto;
+}
+
+.purchase-button::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  right: 6px;
+  height: 25%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  opacity: 0.7;
+}
+
+.purchase-button.can-afford {
+  background: linear-gradient(145deg, #32cd32, #228b22);
+  border-color: #1e7e1e;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.purchase-button.can-afford:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(145deg, #3ae63a, #2aa02a);
+}
+
+.purchase-button.can-afford:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.purchase-button.cannot-afford {
+  background: linear-gradient(145deg, #666666, #444444);
+  border-color: #333333;
+  color: #cccccc;
+  cursor: not-allowed;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.owned-badge {
+  padding: 10px 15px;
+  background: linear-gradient(145deg, #32cd32, #228b22);
+  border: 2px solid #1e7e1e;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: auto;
+  position: relative;
+}
+
+.owned-badge::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  right: 6px;
+  height: 25%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  opacity: 0.7;
+}
+
+.owned-badge span {
+  color: white;
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 799px) {
+  .item-card {
+    width: 160px;
+    height: 220px;
+  }
+  
+  .card-image-container {
+    height: 110px;
+  }
+  
+  .card-content {
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .card-name {
+    font-size: 12px;
+  }
+  
+  .card-price {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  
+  .purchase-button,
+  .owned-badge {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+  
+  .rarity-badge {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+}

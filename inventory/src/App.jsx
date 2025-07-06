@@ -1,33 +1,51 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import MainDiv from './components/MainDiv'
+import MoneyDisplay from './components/MoneyDisplay'
+import SnooCharacter from './components/SnooCharacter'
+import ToastNotification from './components/ToastNotification'
+import FullscreenBackdrop from './components/FullscreenBackdrop'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [money, setMoney] = useState(2500)
+  const [activeTab, setActiveTab] = useState('featured')
+  const [toast, setToast] = useState(null)
+  const [inventory, setInventory] = useState([])
+
+  const showToast = (message, type = 'success') => {
+    setToast({ message, type })
+    setTimeout(() => setToast(null), 3000)
+  }
+
+  const purchaseItem = (item) => {
+    if (money >= item.price) {
+      setMoney(prev => prev - item.price)
+      setInventory(prev => [...prev, { ...item, id: Date.now() }])
+      showToast(`Purchased ${item.name}!`, 'success')
+    } else {
+      showToast('Not enough coins!', 'error')
+    }
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <MainDiv 
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        money={money}
+        purchaseItem={purchaseItem}
+        inventory={inventory}
+      />
+      <MoneyDisplay money={money} />
+      <SnooCharacter />
+      <FullscreenBackdrop />
+      {toast && (
+        <ToastNotification 
+          message={toast.message} 
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
     </>
   )
 }
