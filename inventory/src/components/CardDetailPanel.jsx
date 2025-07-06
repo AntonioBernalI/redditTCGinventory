@@ -1,5 +1,6 @@
 import './CardDetailPanel.css'
 import { CARD_DATA } from '../data/cardData'
+import karmaIcon from '../assets/Karma.png'
 
 const CardDetailPanel = ({ card, onClose, onOpenPack }) => {
   const rarityColors = {
@@ -71,7 +72,7 @@ const CardDetailPanel = ({ card, onClose, onOpenPack }) => {
                   <span className="stat-label">KARMA:</span>
                   <span className="stat-value">
                     <img 
-                      src="/src/assets/Karma.png" 
+                      src={karmaIcon}
                       alt="Karma" 
                       style={{ 
                         width: '20px', 

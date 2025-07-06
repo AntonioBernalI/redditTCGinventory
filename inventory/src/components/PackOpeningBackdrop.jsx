@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './PackOpeningBackdrop.css'
+import boosterpackImg from '../assets/sobre.png'
 
 const PackOpeningBackdrop = ({ isOpen, onClose, newCards }) => {
   const [animationStage, setAnimationStage] = useState('opening') // 'opening', 'revealing', 'waiting', 'complete'
@@ -51,7 +52,7 @@ const PackOpeningBackdrop = ({ isOpen, onClose, newCards }) => {
           <div className="pack-opening-stage">
             <div className="pack-animation">
               <img 
-                src="/src/assets/sobre.png" 
+                src={boosterpackImg}
                 alt="Opening Pack" 
                 className="pack-image opening"
               />
