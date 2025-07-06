@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './PackOpeningBackdrop.css'
 
 const PackOpeningBackdrop = ({ isOpen, onClose, newCards }) => {
-  const [animationStage, setAnimationStage] = useState('opening') // 'opening', 'revealing', 'complete'
+  const [animationStage, setAnimationStage] = useState('opening') // 'opening', 'revealing', 'waiting', 'complete'
   const [revealedCards, setRevealedCards] = useState([])
 
   useEffect(() => {
@@ -21,9 +21,9 @@ const PackOpeningBackdrop = ({ isOpen, onClose, newCards }) => {
           }, index * 500)
         })
         
-        // Stage 3: Complete after all cards are revealed (+ 1 second)
+        // Stage 3: Wait for user to click continue after all cards are revealed
         setTimeout(() => {
-          setAnimationStage('complete')
+          setAnimationStage('waiting')
         }, newCards.length * 500 + 1000)
         
       }, 2000)
@@ -31,6 +31,10 @@ const PackOpeningBackdrop = ({ isOpen, onClose, newCards }) => {
       return () => clearTimeout(openingTimer)
     }
   }, [isOpen, newCards])
+
+  const handleContinue = () => {
+    setAnimationStage('complete')
+  }
 
   const handleClose = () => {
     setAnimationStage('opening')
@@ -100,9 +104,52 @@ const PackOpeningBackdrop = ({ isOpen, onClose, newCards }) => {
           </div>
         )}
         
+        {animationStage === 'waiting' && (
+          <div className="waiting-stage">
+            <h2 className="reveal-title">New Cards Revealed!</h2>
+            <div className="revealed-cards-grid">
+              {revealedCards.map((card, index) => (
+                <div 
+                  key={index} 
+                  className="revealed-card revealed"
+                >
+                  <img 
+                    src={card.image} 
+                    alt={card.name}
+                    className={`card-image ${card.type === 'prizes' ? 'prize-card' : ''} ${card.type === 'packs' ? 'pack-card' : ''}`}
+                  />
+                  <div className="card-info">
+                    <h3 className="card-name">{card.name}</h3>
+                    <div 
+                      className="card-rarity"
+                      style={{ 
+                        color: {
+                          common: '#888888',
+                          uncommon: '#ffffff',
+                          rare: '#ffff00',
+                          epic: '#9932cc',
+                          legendary: '#ffd700'
+                        }[card.rarity]
+                      }}
+                    >
+                      {card.rarity.toUpperCase()}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <button 
+              className="continue-button"
+              onClick={handleContinue}
+            >
+              CONTINUE
+            </button>
+          </div>
+        )}
+        
         {animationStage === 'complete' && (
           <div className="completion-stage">
-            <h2 className="completion-title">Pack Opened Successfully!</h2>
+            <h2 className="completion-title">Cards Added to Collection!</h2>
             <p className="completion-text">
               {newCards.length} new cards have been added to your collection!
             </p>
@@ -110,7 +157,7 @@ const PackOpeningBackdrop = ({ isOpen, onClose, newCards }) => {
               className="close-animation-button"
               onClick={handleClose}
             >
-              CONTINUE
+              CLOSE
             </button>
           </div>
         )}
