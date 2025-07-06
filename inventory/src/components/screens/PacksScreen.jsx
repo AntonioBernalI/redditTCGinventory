@@ -1,7 +1,7 @@
 import ItemCard from '../ItemCard'
 import './PacksScreen.css'
 
-const PacksScreen = ({ money, purchaseItem }) => {
+const PacksScreen = ({ purchaseItem }) => {
   const packs = [
     {
       id: 11,
@@ -64,7 +64,6 @@ const PacksScreen = ({ money, purchaseItem }) => {
           <ItemCard
             key={pack.id}
             item={pack}
-            money={money}
             onPurchase={purchaseItem}
           />
         ))}

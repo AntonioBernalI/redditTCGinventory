@@ -1,7 +1,7 @@
 import ItemCard from '../ItemCard'
 import './FeaturedScreen.css'
 
-const FeaturedScreen = ({ money, purchaseItem }) => {
+const FeaturedScreen = ({ purchaseItem }) => {
   const featuredItems = [
     {
       id: 1,
@@ -45,7 +45,6 @@ const FeaturedScreen = ({ money, purchaseItem }) => {
           <ItemCard
             key={item.id}
             item={item}
-            money={money}
             onPurchase={purchaseItem}
           />
         ))}

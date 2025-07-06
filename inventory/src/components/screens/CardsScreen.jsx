@@ -1,7 +1,7 @@
 import ItemCard from '../ItemCard'
 import './CardsScreen.css'
 
-const CardsScreen = ({ money, purchaseItem, inventory }) => {
+const CardsScreen = ({ purchaseItem, inventory }) => {
   const cards = [
     {
       id: 5,
@@ -67,7 +67,6 @@ const CardsScreen = ({ money, purchaseItem, inventory }) => {
               <ItemCard
                 key={`owned-${card.id}`}
                 item={card}
-                money={money}
                 onPurchase={purchaseItem}
                 isOwned={true}
               />
@@ -83,7 +82,6 @@ const CardsScreen = ({ money, purchaseItem, inventory }) => {
             <ItemCard
               key={card.id}
               item={card}
-              money={money}
               onPurchase={purchaseItem}
             />
           ))}

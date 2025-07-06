@@ -6,17 +6,17 @@ import CardsScreen from './screens/CardsScreen'
 import PacksScreen from './screens/PacksScreen'
 import './MainDiv.css'
 
-const MainDiv = ({ activeTab, setActiveTab, money, purchaseItem, inventory }) => {
+const MainDiv = ({ activeTab, setActiveTab, purchaseItem, inventory }) => {
   const renderScreen = () => {
     switch (activeTab) {
       case 'featured':
-        return <FeaturedScreen money={money} purchaseItem={purchaseItem} />
+        return <FeaturedScreen purchaseItem={purchaseItem} />
       case 'cards':
-        return <CardsScreen money={money} purchaseItem={purchaseItem} inventory={inventory} />
+        return <CardsScreen purchaseItem={purchaseItem} inventory={inventory} />
       case 'packs':
-        return <PacksScreen money={money} purchaseItem={purchaseItem} />
+        return <PacksScreen purchaseItem={purchaseItem} />
       default:
-        return <FeaturedScreen money={money} purchaseItem={purchaseItem} />
+        return <FeaturedScreen purchaseItem={purchaseItem} />
     }
   }
 

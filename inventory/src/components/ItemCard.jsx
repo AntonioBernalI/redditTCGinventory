@@ -1,7 +1,6 @@
 import './ItemCard.css'
 
-const ItemCard = ({ item, money, onPurchase, isOwned = false }) => {
-  const canAfford = money >= item.price
+const ItemCard = ({ item, onPurchase, isOwned = false }) => {
   const rarityColors = {
     common: '#888888',
     uncommon: '#32cd32',
@@ -11,7 +10,7 @@ const ItemCard = ({ item, money, onPurchase, isOwned = false }) => {
   }
 
   const handlePurchase = () => {
-    if (!isOwned && canAfford) {
+    if (!isOwned) {
       onPurchase(item)
     }
   }
@@ -41,11 +40,10 @@ const ItemCard = ({ item, money, onPurchase, isOwned = false }) => {
         
         {!isOwned && (
           <button 
-            className={`purchase-button ${canAfford ? 'can-afford' : 'cannot-afford'}`}
+            className="purchase-button can-afford"
             onClick={handlePurchase}
-            disabled={!canAfford}
           >
-            {canAfford ? 'BUY NOW' : 'NOT ENOUGH COINS'}
+            BUY NOW
           </button>
         )}
         
