@@ -2,7 +2,7 @@
   width: 320px;
   background: linear-gradient(145deg, rgba(18, 103, 154, 0.95), rgba(18, 103, 154, 1));
   border: 3px solid #ff5801;
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 
     0 10px 20px rgba(0, 0, 0, 0.4),
@@ -22,7 +22,7 @@
   right: 12px;
   height: 25%;
   background: rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
+  border-radius: 15px;
   opacity: 0.8;
   pointer-events: none;
   z-index: 1;
@@ -57,7 +57,7 @@
   font-weight: bold;
   cursor: pointer;
   padding: 5px;
-  border-radius: 50%;
+  border-radius: 15px;
   transition: all 0.2s ease;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -81,7 +81,7 @@
   position: relative;
   width: 100%;
   height: 200px;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
@@ -97,7 +97,7 @@
   top: 10px;
   right: 10px;
   padding: 6px 12px;
-  border-radius: 15px;
+  border-radius: 20px;
   font-size: 12px;
   font-weight: bold;
   color: white;
@@ -111,7 +111,7 @@
   top: 10px;
   left: 10px;
   padding: 6px 12px;
-  border-radius: 15px;
+  border-radius: 20px;
   font-size: 14px;
   font-weight: bold;
   color: white;
@@ -150,7 +150,7 @@
   align-items: center;
   padding: 8px 12px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -172,7 +172,7 @@
 .detail-description {
   padding: 15px;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
+  border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 

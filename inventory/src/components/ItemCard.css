@@ -3,7 +3,7 @@
   height: 280px;
   background: linear-gradient(145deg, rgba(18, 103, 154, 0.9), rgba(18, 103, 154, 1));
   border: 3px solid #ff5801;
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
   position: relative;
   transition: all 0.2s ease;
@@ -22,7 +22,7 @@
   right: 12px;
   height: 25%;
   background: rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
+  border-radius: 15px;
   opacity: 0.8;
   pointer-events: none;
   z-index: 1;
@@ -62,7 +62,7 @@
   top: 8px;
   right: 8px;
   padding: 4px 8px;
-  border-radius: 12px;
+  border-radius: 15px;
   font-size: 10px;
   font-weight: bold;
   color: white;
@@ -99,7 +99,7 @@
   padding: 8px 12px;
   background: linear-gradient(145deg, #ffd700, #ffb300);
   border: 2px solid #ff8c00;
-  border-radius: 15px;
+  border-radius: 20px;
   color: #000;
   font-weight: bold;
   font-size: 12px;
@@ -118,7 +118,7 @@
   right: 6px;
   height: 30%;
   background: rgba(255, 255, 255, 0.4);
-  border-radius: 8px;
+  border-radius: 15px;
   opacity: 0.8;
 }
 
@@ -137,7 +137,7 @@
 .purchase-button {
   padding: 10px 15px;
   border: 2px solid;
-  border-radius: 20px;
+  border-radius: 25px;
   font-weight: bold;
   font-size: 11px;
   text-transform: uppercase;
@@ -157,7 +157,7 @@
   right: 6px;
   height: 25%;
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
+  border-radius: 20px;
   opacity: 0.7;
 }
 
@@ -191,7 +191,7 @@
   padding: 10px 15px;
   background: linear-gradient(145deg, #32cd32, #228b22);
   border: 2px solid #1e7e1e;
-  border-radius: 20px;
+  border-radius: 25px;
   text-align: center;
   margin-top: auto;
   position: relative;
@@ -205,7 +205,7 @@
   right: 6px;
   height: 25%;
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
+  border-radius: 20px;
   opacity: 0.7;
 }
 

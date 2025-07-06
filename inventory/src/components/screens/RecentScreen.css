@@ -17,7 +17,7 @@
   padding: 15px;
   background: linear-gradient(145deg, rgba(255, 88, 1, 0.3), rgba(255, 69, 0, 0.4));
   border: 2px solid #ff5801;
-  border-radius: 15px;
+  border-radius: 20px;
   position: relative;
 }
 
@@ -29,7 +29,7 @@
   right: 10px;
   height: 30%;
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
+  border-radius: 15px;
   opacity: 0.7;
 }
 
@@ -55,12 +55,12 @@
 
 .recent-sections::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  border-radius: 15px;
 }
 
 .recent-sections::-webkit-scrollbar-thumb {
   background: #ff5801;
-  border-radius: 4px;
+  border-radius: 15px;
 }
 
 .recent-sections::-webkit-scrollbar-thumb:hover {
@@ -80,7 +80,7 @@
   padding: 12px 20px;
   background: rgba(255, 255, 255, 0.05);
   border: 2px solid #ff5801;
-  border-radius: 12px;
+  border-radius: 15px;
   position: relative;
 }
 
@@ -92,13 +92,13 @@
   right: 8px;
   height: 25%;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  border-radius: 15px;
   opacity: 0.7;
 }
 
 .date-badge {
   padding: 6px 12px;
-  border-radius: 15px;
+  border-radius: 20px;
   font-size: 12px;
   font-weight: bold;
   color: white;
@@ -134,7 +134,7 @@
   text-align: center;
   background: rgba(255, 255, 255, 0.05);
   border: 2px dashed rgba(255, 255, 255, 0.3);
-  border-radius: 15px;
+  border-radius: 20px;
 }
 
 .empty-icon {
