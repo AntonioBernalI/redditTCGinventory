@@ -28,8 +28,8 @@ const FullscreenBackdrop = () => {
     <div className="fullscreen-backdrop">
       <div className="backdrop-content">
         <h2>Screen Too Small</h2>
-        <p>Please use a larger screen to enjoy the Reddit TCG Shop experience.</p>
-      </div>
+      <h2>PLEASE OPEN FULLSCREEN MODE</h2>
+      <p>For the best Reddit TCG Shop experience, please open this page in fullscreen mode or use a larger screen.</p>
     </div>
   )
 }
