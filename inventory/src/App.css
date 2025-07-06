@@ -184,7 +184,7 @@
 @media (max-width: 1024px) {
   .app-layout {
     flex-direction: column;
-    height: 100vh;
+    gap: 8px;
     overflow: hidden;
   }
   
@@ -228,14 +228,14 @@
   .sidebar-navigation {
     flex-direction: row;
     padding: 10px 15px;
-    gap: 8px;
+    gap: 4px;
     flex: 0;
   }
   
   .sidebar-nav-button {
     flex: 1;
-    padding: 8px 10px;
-    font-size: 10px;
+    padding: 6px 8px;
+    font-size: 9px;
     letter-spacing: 0.5px;
     min-width: 0;
     white-space: nowrap;
@@ -264,13 +264,13 @@
     padding: 8px 12px;
     gap: 6px;
   }
-  
+    padding: 10px 15px;
   .sidebar-stat {
     padding: 6px 4px;
   }
   
   .stat-number {
-    font-size: 14px;
+    font-size: 12px;
   }
   
   .stat-label {
@@ -279,12 +279,12 @@
   
   .sidebar-navigation {
     padding: 8px 12px;
-    gap: 6px;
+    gap: 3px;
   }
   
   .sidebar-nav-button {
-    padding: 6px 8px;
-    font-size: 9px;
+    padding: 5px 6px;
+    font-size: 8px;
   }
   
   .main-content {
