@@ -70,12 +70,23 @@
   object-fit: contain;
 }
 
+.card-image.pack-card {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .inventory-card:hover .card-image {
   transform: scale(1.05);
 }
 
 .inventory-card:hover .card-image.prize-card {
   transform: rotate(90deg) scale(1.05);
+}
+
+.inventory-card:hover .card-image.pack-card {
+  transform: scale(1.05);
 }
 
 .rarity-badge {

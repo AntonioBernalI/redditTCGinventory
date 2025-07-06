@@ -22,7 +22,7 @@ const InventoryCard = ({ item, isSelected, onSelect }) => {
         <img 
           src={item.image} 
           alt={item.name}
-          className={`card-image ${item.type === 'prizes' ? 'prize-card' : ''}`}
+          className={`card-image ${item.type === 'prizes' ? 'prize-card' : ''} ${item.type === 'packs' ? 'pack-card' : ''}`}
         />
         <div 
           className="rarity-badge"

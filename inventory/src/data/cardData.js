@@ -230,6 +230,16 @@ export const CARD_DATA = {
     effect: "All players gain every prize from all Prize cards.",
     rarity: "rare",
     image: "/src/assets/everything.png"
+  },
+  boosterpack: {
+    name: "Booster Pack",
+    type: "packs",
+    hp: null,
+    attacks: [],
+    attackCost: [],
+    effect: "Open this pack to receive 5 additional random cards for your collection. Each pack contains a mix of characters, effects, and prizes with varying rarities.",
+    rarity: "common",
+    image: "/src/assets/sobre.png"
   }
 }
 

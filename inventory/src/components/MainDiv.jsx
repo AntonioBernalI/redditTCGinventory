@@ -52,6 +52,15 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard }) => {
             setSelectedCard={setSelectedCard}
           />
         )
+      case 'packs':
+        return (
+          <CollectionScreen 
+            inventory={filteredInventory}
+            title="PACKS"
+            selectedCard={selectedCard}
+            setSelectedCard={setSelectedCard}
+          />
+        )
       default:
         return (
           <CollectionScreen 

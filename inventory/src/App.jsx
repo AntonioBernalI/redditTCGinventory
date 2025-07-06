@@ -63,6 +63,12 @@ function App() {
       ...getCardByKey('banhammer'),
       quantity: 1,
       dateAcquired: '2024-01-13'
+    },
+    {
+      id: 10,
+      ...getCardByKey('boosterpack'),
+      quantity: 3,
+      dateAcquired: '2024-01-16'
     }
   ])
   const [selectedCard, setSelectedCard] = useState(null)
@@ -144,6 +150,12 @@ function App() {
               onClick={() => setActiveTab('effects')}
             >
               EFFECTS
+            </button>
+            <button
+              className={`sidebar-nav-button ${activeTab === 'packs' ? 'active' : ''}`}
+              onClick={() => setActiveTab('packs')}
+            >
+              PACKS
             </button>
           </div>
         </div>
