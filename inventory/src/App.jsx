@@ -118,16 +118,22 @@ function App() {
               MY COLLECTION
             </button>
             <button
-              className={`sidebar-nav-button ${activeTab === 'rarity' ? 'active' : ''}`}
-              onClick={() => setActiveTab('rarity')}
+              className={`sidebar-nav-button ${activeTab === 'prizes' ? 'active' : ''}`}
+              onClick={() => setActiveTab('prizes')}
             >
-              BY RARITY
+              PRIZES
             </button>
             <button
-              className={`sidebar-nav-button ${activeTab === 'recent' ? 'active' : ''}`}
-              onClick={() => setActiveTab('recent')}
+              className={`sidebar-nav-button ${activeTab === 'characters' ? 'active' : ''}`}
+              onClick={() => setActiveTab('characters')}
             >
-              RECENTLY ADDED
+              CHARACTERS
+            </button>
+            <button
+              className={`sidebar-nav-button ${activeTab === 'effects' ? 'active' : ''}`}
+              onClick={() => setActiveTab('effects')}
+            >
+              EFFECTS
             </button>
           </div>
         </div>

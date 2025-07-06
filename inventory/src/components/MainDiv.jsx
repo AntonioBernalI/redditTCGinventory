@@ -14,7 +14,7 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard }) => {
             setSelectedCard={setSelectedCard}
           />
         )
-      case 'rarity':
+      case 'prizes':
         return (
           <RarityScreen 
             inventory={inventory}
@@ -22,9 +22,17 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard }) => {
             setSelectedCard={setSelectedCard}
           />
         )
-      case 'recent':
+      case 'characters':
         return (
           <RecentScreen 
+            inventory={inventory}
+            selectedCard={selectedCard}
+            setSelectedCard={setSelectedCard}
+          />
+        )
+      case 'effects':
+        return (
+          <CollectionScreen 
             inventory={inventory}
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
