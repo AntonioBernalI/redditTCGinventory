@@ -39,8 +39,13 @@ const InventoryCard = ({ item, isSelected, onSelect }) => {
             <span className="info-value">{item.type.toUpperCase()}</span>
           </div>
           <div className="info-item">
-            <span className="info-label">ACQUIRED:</span>
-            <span className="info-value">{new Date(item.dateAcquired).toLocaleDateString()}</span>
+            <span className="info-label">RARITY:</span>
+            <span 
+              className="info-value"
+              style={{ color: rarityColors[item.rarity] }}
+            >
+              {item.rarity.toUpperCase()}
+            </span>
           </div>
         </div>
       </div>
