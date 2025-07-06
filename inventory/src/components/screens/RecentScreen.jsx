@@ -2,7 +2,7 @@ import InventoryCard from '../InventoryCard'
 import CardDetailPanel from '../CardDetailPanel'
 import './RecentScreen.css'
 
-const RecentScreen = ({ inventory, selectedCard, setSelectedCard }) => {
+const RecentScreen = ({ inventory, selectedCard, setSelectedCard, isLoadingCards = false }) => {
   const sortedByDate = [...inventory].sort((a, b) => 
     new Date(b.dateAcquired) - new Date(a.dateAcquired)
   )
@@ -42,7 +42,7 @@ const RecentScreen = ({ inventory, selectedCard, setSelectedCard }) => {
       
       <div className="recent-content">
         <div className="recent-sections">
-          {Object.keys(groupedByDate).length > 0 ? (
+          {!isLoadingCards && Object.keys(groupedByDate).length > 0 ? (
             Object.entries(groupedByDate).map(([date, cards]) => (
               <div key={date} className="date-section">
                 <div className="date-header">
@@ -66,13 +66,13 @@ const RecentScreen = ({ inventory, selectedCard, setSelectedCard }) => {
                 </div>
               </div>
             ))
-          ) : (
+          ) : !isLoadingCards && Object.keys(groupedByDate).length === 0 ? (
             <div className="empty-recent">
               <div className="empty-icon">🕒</div>
               <h3>No Recent Activity</h3>
               <p>No cards have been added to your collection yet. Start collecting to see your recent additions here!</p>
             </div>
-          )}
+          ) : null}
         </div>
         
         {selectedCard && (

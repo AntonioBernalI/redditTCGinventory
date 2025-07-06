@@ -18,7 +18,7 @@ const ToastNotification = ({ message, type, onClose }) => {
     <div className={`toast-notification ${type} ${isVisible ? 'visible' : ''}`}>
       <div className="toast-content">
         <span className="toast-icon">
-          {type === 'success' ? '✅' : '❌'}
+          {type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️'}
         </span>
         <span className="toast-message">{message}</span>
       </div>

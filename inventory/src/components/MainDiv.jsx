@@ -3,7 +3,7 @@ import RarityScreen from './screens/RarityScreen'
 import RecentScreen from './screens/RecentScreen'
 import './MainDiv.css'
 
-const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard }) => {
+const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard, isLoadingCards = false }) => {
   // Filter inventory based on active tab
   const getFilteredInventory = () => {
     if (activeTab === 'collection') {
@@ -23,6 +23,7 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard }) => {
             title="MY COLLECTION"
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
+            isLoadingCards={isLoadingCards}
           />
         )
       case 'prizes':
@@ -32,6 +33,7 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard }) => {
             title="PRIZES"
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
+            isLoadingCards={isLoadingCards}
           />
         )
       case 'characters':
@@ -41,6 +43,7 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard }) => {
             title="CHARACTERS"
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
+            isLoadingCards={isLoadingCards}
           />
         )
       case 'effects':
@@ -50,6 +53,7 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard }) => {
             title="EFFECTS"
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
+            isLoadingCards={isLoadingCards}
           />
         )
       case 'packs':
@@ -59,6 +63,7 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard }) => {
             title="PACKS"
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
+            isLoadingCards={isLoadingCards}
           />
         )
       default:
@@ -68,6 +73,7 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard }) => {
             title="MY COLLECTION"
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
+            isLoadingCards={isLoadingCards}
           />
         )
     }

@@ -2,7 +2,7 @@ import InventoryCard from '../InventoryCard'
 import CardDetailPanel from '../CardDetailPanel'
 import './RarityScreen.css'
 
-const RarityScreen = ({ inventory, selectedCard, setSelectedCard }) => {
+const RarityScreen = ({ inventory, selectedCard, setSelectedCard, isLoadingCards = false }) => {
   const rarityOrder = ['legendary', 'epic', 'rare', 'uncommon', 'common']
   const rarityColors = {
     common: '#888888',
@@ -58,7 +58,7 @@ const RarityScreen = ({ inventory, selectedCard, setSelectedCard }) => {
             )
           })}
           
-          {inventory.length === 0 && (
+          {!isLoadingCards && inventory.length === 0 && (
             <div className="empty-rarity">
               <div className="empty-icon">🎴</div>
               <h3>No Cards to Display</h3>

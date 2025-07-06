@@ -188,6 +188,7 @@ function App() {
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
             addToInventory={addToInventory}
+            isLoadingCards={isLoadingCards}
           />
         </div>
       </div>

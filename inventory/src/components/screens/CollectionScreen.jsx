@@ -2,7 +2,7 @@ import InventoryCard from '../InventoryCard'
 import CardDetailPanel from '../CardDetailPanel'
 import './CollectionScreen.css'
 
-const CollectionScreen = ({ inventory, selectedCard, setSelectedCard, title = "MY COLLECTION" }) => {
+const CollectionScreen = ({ inventory, selectedCard, setSelectedCard, title = "MY COLLECTION", isLoadingCards = false }) => {
   return (
     <div className="collection-screen">
       <div className="screen-header">
@@ -21,7 +21,7 @@ const CollectionScreen = ({ inventory, selectedCard, setSelectedCard, title = "M
       
       <div className="collection-content">
         <div className="cards-grid">
-          {inventory.length > 0 ? (
+          {!isLoadingCards && inventory.length > 0 ? (
             inventory.map(card => (
               <InventoryCard
                 key={card.id}
@@ -30,13 +30,13 @@ const CollectionScreen = ({ inventory, selectedCard, setSelectedCard, title = "M
                 onSelect={setSelectedCard}
               />
             ))
-          ) : (
+          ) : !isLoadingCards && inventory.length === 0 ? (
             <div className="empty-collection">
               <div className="empty-icon">📦</div>
               <h3>No {title.toLowerCase()} Found</h3>
               <p>No items of this type in your collection yet. Start collecting to see them here!</p>
             </div>
-          )}
+          ) : null}
         </div>
         
         {selectedCard && (

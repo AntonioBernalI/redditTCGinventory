@@ -35,6 +35,13 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
+.toast-notification.info {
+  background: linear-gradient(145deg, #4a90e2, #357abd);
+  border-color: #2968a3;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 .toast-notification::before {
   content: '';
   position: absolute;
