@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { CARD_DATA, getCardByKey } from './data/cardData'
+import { getCardByKey } from './data/cardData'
 import MainDiv from './components/MainDiv'
 import ToastNotification from './components/ToastNotification'
 import FullscreenBackdrop from './components/FullscreenBackdrop'
@@ -18,72 +18,14 @@ function App() {
   const [activeTab, setActiveTab] = useState('collection')
   const [toast, setToast] = useState(null)
   const [karma, setKarma] = useState("loading...")
-  const [inventory, setInventory] = useState([
-    // Pre-populated inventory using card data
-    {
-      id: 1,
-      ...getCardByKey('spez'),
-      quantity: 1,
-      dateAcquired: '2024-01-15'
-    },
-    {
-      id: 2,
-      ...getCardByKey('angrysnoo'),
-      quantity: 2,
-      dateAcquired: '2024-01-10'
-    },
-    {
-      id: 3,
-      ...getCardByKey('ghostsnoo'),
-      quantity: 1,
-      dateAcquired: '2024-01-08'
-    },
-    {
-      id: 4,
-      ...getCardByKey('devvitduck'),
-      quantity: 3,
-      dateAcquired: '2024-01-05'
-    },
-    {
-      id: 5,
-      ...getCardByKey('mod'),
-      quantity: 1,
-      dateAcquired: '2024-01-12'
-    },
-    {
-      id: 6,
-      ...getCardByKey('normalprize'),
-      quantity: 1,
-      dateAcquired: '2024-01-14'
-    },
-    {
-      id: 7,
-      ...getCardByKey('karmaprize'),
-      quantity: 2,
-      dateAcquired: '2024-01-11'
-    },
-    {
-      id: 8,
-      ...getCardByKey('upvote'),
-      quantity: 4,
-      dateAcquired: '2024-01-09'
-    },
-    {
-      id: 9,
-      ...getCardByKey('banhammer'),
-      quantity: 1,
-      dateAcquired: '2024-01-13'
-    },
-    {
-      id: 10,
-      ...getCardByKey('boosterpack'),
-      quantity: 3,
-      dateAcquired: '2024-01-16'
-    }
-  ])
+  const [inventory, setInventory] = useState([])
+  const [isLoadingCards, setIsLoadingCards] = useState(true)
   const [selectedCard, setSelectedCard] = useState(null)
 
   useEffect(() => {
+    // Show loading toast initially
+    setToast({ message: 'Loading...', type: 'info' })
+    
     // Send webview_ready_inventory message after mount
     window.parent.postMessage(
       {
@@ -99,6 +41,37 @@ function App() {
       const { type, data } = message;
       if (type === "balance_update") {
         setKarma(data);
+      } else if (type === "cards_update") {
+        // Process the card list and create inventory
+        const cardList = data; // Array of card keys like ["spez", "ghostsnoo", "angrysnoo", ...]
+        
+        // Count occurrences of each card
+        const cardCounts = cardList.reduce((acc, cardKey) => {
+          acc[cardKey] = (acc[cardKey] || 0) + 1;
+          return acc;
+        }, {});
+        
+        // Create inventory items from card counts
+        const newInventory = Object.entries(cardCounts).map(([cardKey, quantity], index) => {
+          const cardData = getCardByKey(cardKey);
+          if (!cardData) {
+            console.warn(`Card data not found for key: ${cardKey}`);
+            return null;
+          }
+          
+          return {
+            id: index + 1,
+            ...cardData,
+            quantity,
+            dateAcquired: new Date().toISOString().split('T')[0] // Today's date as placeholder
+          };
+        }).filter(Boolean); // Remove null entries
+        
+        setInventory(newInventory);
+        setIsLoadingCards(false);
+        
+        // Hide loading toast
+        setToast(null);
       }
     };
 
