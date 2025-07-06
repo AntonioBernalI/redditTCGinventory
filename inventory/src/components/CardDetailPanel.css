@@ -75,6 +75,25 @@
   position: relative;
   z-index: 2;
   overflow-y: auto;
+  max-height: calc(100vh - 120px);
+}
+
+.panel-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.panel-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.panel-content::-webkit-scrollbar-thumb {
+  background: #ff5801;
+  border-radius: 15px;
+}
+
+.panel-content::-webkit-scrollbar-thumb:hover {
+  background: #ff4500;
 }
 
 .detail-image-container {
@@ -223,6 +242,7 @@
   
   .panel-content {
     overflow-y: auto;
+    max-height: calc(100vh - 80px);
     flex: 1;
   }
   
