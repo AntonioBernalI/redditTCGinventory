@@ -36,35 +36,21 @@
   padding: 25px 20px;
   border-bottom: 3px solid #ff5801;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 15px;
   position: relative;
   z-index: 2;
   background: linear-gradient(145deg, rgba(255, 88, 1, 0.3), rgba(255, 69, 0, 0.4));
 }
 
-.sidebar-logo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 3px solid #ffd700;
+.sidebar-header-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 80px;
   object-fit: cover;
   box-shadow: 
     0 4px 8px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.sidebar-title {
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin: 0;
-  text-align: center;
-  line-height: 1.2;
 }
 
 .sidebar-stats {
@@ -212,19 +198,11 @@
   }
   
   .sidebar-header {
-    flex-direction: row;
     padding: 10px 15px;
-    gap: 10px;
   }
   
-  .sidebar-logo {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .sidebar-title {
-    font-size: 14px;
-    letter-spacing: 0.5px;
+  .sidebar-header-image {
+    max-height: 50px;
   }
   
   .sidebar-stats {
@@ -279,13 +257,8 @@
     padding: 8px 12px;
   }
   
-  .sidebar-logo {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .sidebar-title {
-    font-size: 12px;
+  .sidebar-header-image {
+    max-height: 40px;
   }
   
   .sidebar-stats {

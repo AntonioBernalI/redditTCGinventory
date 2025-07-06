@@ -89,11 +89,10 @@ function App() {
         <div className="left-sidebar">
           <div className="sidebar-header">
             <img 
-              src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400" 
+              src="/src/assets/redditTCGinventoryPCheader.png" 
               alt="Reddit TCG Inventory" 
-              className="sidebar-logo"
+              className="sidebar-header-image"
             />
-            <h1 className="sidebar-title">REDDIT TCG INVENTORY</h1>
           </div>
           
           <div className="sidebar-stats">
