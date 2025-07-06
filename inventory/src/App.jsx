@@ -123,17 +123,17 @@ function App() {
             <div className="sidebar-stat">
               <span className="stat-number">{inventory.reduce((sum, item) => sum + (item.karma || 0) * item.quantity, 0).toLocaleString()}</span>
               <span className="stat-label">
-                KARMA 
                 <img 
                   src="/src/assets/Karma.png" 
                   alt="Karma" 
                   style={{ 
-                    width: '12px', 
-                    height: '12px', 
-                    marginLeft: '4px',
+                    width: '18px', 
+                    height: '18px', 
+                    marginRight: '6px',
                     verticalAlign: 'middle'
                   }} 
                 />
+                KARMA
               </span>
             </div>
           </div>

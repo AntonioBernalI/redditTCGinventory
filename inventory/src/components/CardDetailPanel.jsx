@@ -78,17 +78,17 @@ const CardDetailPanel = ({ card, onClose }) => {
               <div className="detail-stat">
                 <span className="stat-label">KARMA:</span>
                 <span className="stat-value">
-                  {card.karma.toLocaleString()} 
                   <img 
                     src="/src/assets/Karma.png" 
                     alt="Karma" 
                     style={{ 
-                      width: '14px', 
-                      height: '14px', 
-                      marginLeft: '4px',
+                      width: '20px', 
+                      height: '20px', 
+                      marginRight: '6px',
                       verticalAlign: 'middle'
                     }} 
                   />
+                  {card.karma.toLocaleString()}
                 </span>
               </div>
             )}
