@@ -24,12 +24,6 @@ const InventoryCard = ({ item, isSelected, onSelect }) => {
           alt={item.name}
           className={`card-image ${item.type === 'prizes' ? 'prize-card' : ''} ${item.type === 'packs' ? 'pack-card' : ''}`}
         />
-        <div 
-          className="rarity-badge"
-          style={{ backgroundColor: rarityColors[item.rarity] }}
-        >
-          {item.rarity.toUpperCase()}
-        </div>
         {item.quantity > 1 && (
           <div className="quantity-badge">
             x{item.quantity}
