@@ -2,11 +2,11 @@ import InventoryCard from '../InventoryCard'
 import CardDetailPanel from '../CardDetailPanel'
 import './CollectionScreen.css'
 
-const CollectionScreen = ({ inventory, selectedCard, setSelectedCard }) => {
+const CollectionScreen = ({ inventory, selectedCard, setSelectedCard, title = "MY COLLECTION" }) => {
   return (
     <div className="collection-screen">
       <div className="screen-header">
-        <h2 className="screen-title">MY COLLECTION</h2>
+        <h2 className="screen-title">{title}</h2>
         <div className="collection-stats">
           <div className="stat-badge">
             <span className="stat-number">{inventory.length}</span>
@@ -33,8 +33,8 @@ const CollectionScreen = ({ inventory, selectedCard, setSelectedCard }) => {
           ) : (
             <div className="empty-collection">
               <div className="empty-icon">📦</div>
-              <h3>No Cards in Collection</h3>
-              <p>Your inventory is empty. Start collecting cards to see them here!</p>
+              <h3>No {title.toLowerCase()} Found</h3>
+              <p>No items of this type in your collection yet. Start collecting to see them here!</p>
             </div>
           )}
         </div>

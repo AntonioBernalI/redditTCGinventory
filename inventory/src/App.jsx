@@ -13,7 +13,7 @@ function App() {
       id: 1,
       name: 'Legendary Dragon Card',
       image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
-      type: 'card',
+      type: 'collection',
       rarity: 'legendary',
       quantity: 1,
       dateAcquired: '2024-01-15'
@@ -22,7 +22,7 @@ function App() {
       id: 2,
       name: 'Fire Elemental',
       image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
-      type: 'card',
+      type: 'collection',
       rarity: 'rare',
       quantity: 2,
       dateAcquired: '2024-01-10'
@@ -31,7 +31,7 @@ function App() {
       id: 3,
       name: 'Water Spirit',
       image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
-      type: 'card',
+      type: 'collection',
       rarity: 'rare',
       quantity: 1,
       dateAcquired: '2024-01-08'
@@ -40,7 +40,7 @@ function App() {
       id: 4,
       name: 'Wind Dancer',
       image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
-      type: 'card',
+      type: 'characters',
       rarity: 'uncommon',
       quantity: 3,
       dateAcquired: '2024-01-05'
@@ -49,10 +49,46 @@ function App() {
       id: 5,
       name: 'Shadow Assassin',
       image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
-      type: 'card',
+      type: 'characters',
       rarity: 'epic',
       quantity: 1,
       dateAcquired: '2024-01-12'
+    },
+    {
+      id: 6,
+      name: 'Golden Trophy',
+      image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
+      type: 'prizes',
+      rarity: 'legendary',
+      quantity: 1,
+      dateAcquired: '2024-01-14'
+    },
+    {
+      id: 7,
+      name: 'Silver Medal',
+      image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
+      type: 'prizes',
+      rarity: 'rare',
+      quantity: 2,
+      dateAcquired: '2024-01-11'
+    },
+    {
+      id: 8,
+      name: 'Fire Burst',
+      image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
+      type: 'effects',
+      rarity: 'uncommon',
+      quantity: 4,
+      dateAcquired: '2024-01-09'
+    },
+    {
+      id: 9,
+      name: 'Lightning Strike',
+      image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
+      type: 'effects',
+      rarity: 'epic',
+      quantity: 1,
+      dateAcquired: '2024-01-13'
     }
   ])
   const [selectedCard, setSelectedCard] = useState(null)
