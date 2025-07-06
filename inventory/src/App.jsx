@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getCardByKey } from './data/cardData'
 import { generateBoosterPackCards } from './utils/cardGenerator'
+import { createCardKey } from './data/cardData'
 import MainDiv from './components/MainDiv'
 import ToastNotification from './components/ToastNotification'
 import FullscreenBackdrop from './components/FullscreenBackdrop'
@@ -82,6 +83,41 @@ function App() {
     isOpen: false,
     newCards: []
   })
+
+  // Convert inventory to the format expected by parent (array of card keys)
+  const convertInventoryToCardList = (inventory) => {
+    const cardList = []
+    
+    inventory.forEach(item => {
+      const cardKey = createCardKey(item.name)
+      // Add the card key multiple times based on quantity
+      for (let i = 0; i < item.quantity; i++) {
+        cardList.push(cardKey)
+      }
+    })
+    
+    return cardList
+  }
+
+  // Send inventory update to parent before page unload
+  useEffect(() => {
+    const handleBeforeUnload = (e) => {
+      // Convert current inventory to card list format
+      const cardList = convertInventoryToCardList(inventory)
+      
+      // Send inventory update to parent
+      window.parent.postMessage({
+        type: 'inventory_update',
+        data: cardList
+      }, '*')
+      
+      e.preventDefault()
+      e.returnValue = ''
+    }
+
+    window.addEventListener('beforeunload', handleBeforeUnload)
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload)
+  }, [inventory])
 
   useEffect(() => {
     // TODO: REMOVE - Mock data setup for testing
@@ -186,7 +222,7 @@ function App() {
     // Update inventory: remove one booster pack and add new cards
     setInventory(prev => {
       // Remove one booster pack
-      const updatedInventory = prev.map(item => {
+      let updatedInventory = prev.map(item => {
         if (item.id === packCard.id) {
           return item.quantity > 1 
             ? { ...item, quantity: item.quantity - 1 }
@@ -218,6 +254,12 @@ function App() {
       })
       
       return updatedInventory
+    })
+    
+    // Send updated inventory to parent immediately after pack opening
+    setTimeout(() => {
+      const cardList = convertInventoryToCardList(inventory)
+      window.parent.postMessage({ type: 'inventory_update', data: cardList }, '*')
     })
     
     // Close the card detail panel
