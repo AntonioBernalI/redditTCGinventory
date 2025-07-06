@@ -1,7 +1,7 @@
 import CollectionScreen from './screens/CollectionScreen'
 import './MainDiv.css'
 
-const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard, isLoadingCards = false }) => {
+const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard, onOpenPack, isLoadingCards = false }) => {
   // Filter inventory based on active tab
   const getFilteredInventory = () => {
     if (activeTab === 'collection') {
@@ -22,6 +22,7 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard, isLoadin
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
             isLoadingCards={isLoadingCards}
+            onOpenPack={onOpenPack}
           />
         )
       case 'prizes':
@@ -32,6 +33,7 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard, isLoadin
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
             isLoadingCards={isLoadingCards}
+            onOpenPack={onOpenPack}
           />
         )
       case 'characters':
@@ -42,6 +44,7 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard, isLoadin
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
             isLoadingCards={isLoadingCards}
+            onOpenPack={onOpenPack}
           />
         )
       case 'effects':
@@ -52,6 +55,7 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard, isLoadin
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
             isLoadingCards={isLoadingCards}
+            onOpenPack={onOpenPack}
           />
         )
       case 'packs':
@@ -62,6 +66,7 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard, isLoadin
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
             isLoadingCards={isLoadingCards}
+            onOpenPack={onOpenPack}
           />
         )
       default:
@@ -72,6 +77,7 @@ const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard, isLoadin
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
             isLoadingCards={isLoadingCards}
+            onOpenPack={onOpenPack}
           />
         )
     }

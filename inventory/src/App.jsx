@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { getCardByKey } from './data/cardData'
+import { generateBoosterPackCards } from './utils/cardGenerator'
 import MainDiv from './components/MainDiv'
 import ToastNotification from './components/ToastNotification'
 import FullscreenBackdrop from './components/FullscreenBackdrop'
+import PackOpeningBackdrop from './components/PackOpeningBackdrop'
 import './App.css'
 
 function deepFindMessage(obj) {
@@ -76,6 +78,10 @@ function App() {
   
   const [isLoadingCards, setIsLoadingCards] = useState(true)
   const [selectedCard, setSelectedCard] = useState(null)
+  const [packOpening, setPackOpening] = useState({
+    isOpen: false,
+    newCards: []
+  })
 
   useEffect(() => {
     // TODO: REMOVE - Mock data setup for testing
@@ -167,6 +173,67 @@ function App() {
     showToast(`Added ${item.name} to inventory!`, 'success')
   }
 
+  const openBoosterPack = (packCard) => {
+    // Generate 5 new random cards
+    const newCards = generateBoosterPackCards()
+    
+    // Show the pack opening animation
+    setPackOpening({
+      isOpen: true,
+      newCards: newCards
+    })
+    
+    // Update inventory: remove one booster pack and add new cards
+    setInventory(prev => {
+      // Remove one booster pack
+      const updatedInventory = prev.map(item => {
+        if (item.id === packCard.id) {
+          return item.quantity > 1 
+            ? { ...item, quantity: item.quantity - 1 }
+            : null
+        }
+        return item
+      }).filter(Boolean)
+      
+      // Add new cards to inventory
+      let nextId = Math.max(...updatedInventory.map(item => item.id), 0) + 1
+      
+      newCards.forEach(newCard => {
+        const existing = updatedInventory.find(item => item.name === newCard.name)
+        if (existing) {
+          // Increase quantity of existing card
+          const index = updatedInventory.findIndex(item => item.name === newCard.name)
+          updatedInventory[index] = {
+            ...updatedInventory[index],
+            quantity: updatedInventory[index].quantity + 1
+          }
+        } else {
+          // Add new card to inventory
+          updatedInventory.push({
+            ...newCard,
+            id: nextId++,
+            quantity: 1
+          })
+        }
+      })
+      
+      return updatedInventory
+    })
+    
+    // Close the card detail panel
+    setSelectedCard(null)
+    
+    // Show success toast
+    showToast('Booster pack opened! 5 new cards added!', 'success')
+  }
+
+  const closePackOpening = () => {
+    setPackOpening({
+      isOpen: false,
+      newCards: []
+    })
+  }
+
   return (
     <>
       <div className="app-layout">
@@ -248,11 +315,17 @@ function App() {
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
             addToInventory={addToInventory}
+            onOpenPack={openBoosterPack}
             isLoadingCards={isLoadingCards}
           />
         </div>
       </div>
       <FullscreenBackdrop />
+      <PackOpeningBackdrop 
+        isOpen={packOpening.isOpen}
+        onClose={closePackOpening}
+        newCards={packOpening.newCards}
+      />
       {toast && (
         <ToastNotification 
           message={toast.message} 

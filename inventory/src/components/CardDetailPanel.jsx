@@ -1,7 +1,7 @@
 import './CardDetailPanel.css'
 import { CARD_DATA } from '../data/cardData'
 
-const CardDetailPanel = ({ card, onClose }) => {
+const CardDetailPanel = ({ card, onClose, onOpenPack }) => {
   const rarityColors = {
     common: '#888888',
     uncommon: '#ffffff',
@@ -118,6 +118,15 @@ const CardDetailPanel = ({ card, onClose }) => {
               {!isBoosterPack && card.quantity > 1 && ` You own ${card.quantity} copies of this card.`}
             </p>
           </div>
+          
+          {isBoosterPack && (
+            <button 
+              className="open-pack-button"
+              onClick={() => onOpenPack(card)}
+            >
+              OPEN PACK
+            </button>
+          )}
         </div>
       </div>
     </div>

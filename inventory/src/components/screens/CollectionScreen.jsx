@@ -2,7 +2,7 @@ import InventoryCard from '../InventoryCard'
 import CardDetailPanel from '../CardDetailPanel'
 import './CollectionScreen.css'
 
-const CollectionScreen = ({ inventory, selectedCard, setSelectedCard, title = "MY COLLECTION", isLoadingCards = false }) => {
+const CollectionScreen = ({ inventory, selectedCard, setSelectedCard, title = "MY COLLECTION", isLoadingCards = false, onOpenPack }) => {
   return (
     <div className="collection-screen">
       <div className="screen-header">
@@ -43,6 +43,7 @@ const CollectionScreen = ({ inventory, selectedCard, setSelectedCard, title = "M
           <CardDetailPanel 
             card={selectedCard} 
             onClose={() => setSelectedCard(null)}
+            onOpenPack={onOpenPack}
           />
         )}
       </div>
