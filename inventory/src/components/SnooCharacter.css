@@ -9,8 +9,8 @@
 .blank-square {
   width: 120px;
   height: 120px;
-  background: #666666;
-  border: 2px solid #333333;
+  background: #ff5801;
+  border: 2px solid #ff4500;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
 }

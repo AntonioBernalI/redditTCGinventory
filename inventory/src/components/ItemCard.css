@@ -180,9 +180,9 @@
 }
 
 .purchase-button.cannot-afford {
-  background: linear-gradient(145deg, #666666, #444444);
-  border-color: #333333;
-  color: #cccccc;
+  background: linear-gradient(145deg, #ff5801, #ff4500);
+  border-color: #ff4500;
+  color: white;
   cursor: not-allowed;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
