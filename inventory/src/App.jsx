@@ -7,7 +7,7 @@ import FullscreenBackdrop from './components/FullscreenBackdrop'
 import './App.css'
 
 function App() {
-  const [money, setMoney] = useState(2500)
+  const [money, setMoney] = useState(0)
   const [activeTab, setActiveTab] = useState('featured')
   const [toast, setToast] = useState(null)
   const [inventory, setInventory] = useState([])
