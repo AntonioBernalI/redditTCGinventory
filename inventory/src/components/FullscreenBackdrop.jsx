@@ -35,3 +35,5 @@ const FullscreenBackdrop = () => {
 }
 
 export default FullscreenBackdrop
+  )
+}
