@@ -77,7 +77,19 @@ const CardDetailPanel = ({ card, onClose }) => {
             {card.karma && (
               <div className="detail-stat">
                 <span className="stat-label">KARMA:</span>
-                <span className="stat-value">{card.karma.toLocaleString()} ⬆️</span>
+                <span className="stat-value">
+                  {card.karma.toLocaleString()} 
+                  <img 
+                    src="/src/assets/Karma.png" 
+                    alt="Karma" 
+                    style={{ 
+                      width: '14px', 
+                      height: '14px', 
+                      marginLeft: '4px',
+                      verticalAlign: 'middle'
+                    }} 
+                  />
+                </span>
               </div>
             )}
             
