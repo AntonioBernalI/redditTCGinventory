@@ -6,6 +6,8 @@ import MainDiv from './components/MainDiv'
 import ToastNotification from './components/ToastNotification'
 import FullscreenBackdrop from './components/FullscreenBackdrop'
 import PackOpeningBackdrop from './components/PackOpeningBackdrop'
+import redditTCGHeader from './assets/redditTCGinventoryPCheader.png'
+import karmaIcon from './assets/Karma.png'
 import './App.css'
 
 function deepFindMessage(obj) {
@@ -202,7 +204,7 @@ function App() {
         <div className="left-sidebar">
           <div className="sidebar-header">
             <img 
-              src="/src/assets/redditTCGinventoryPCheader.png" 
+              src={redditTCGHeader}
               alt="Reddit TCG Inventory" 
               className="sidebar-header-image"
             />
@@ -221,7 +223,7 @@ function App() {
               <span className="stat-number">{typeof karma === 'string' ? karma : karma.toLocaleString()}</span>
               <span className="stat-label">
                 <img 
-                  src="/src/assets/Karma.png" 
+                  src={karmaIcon}
                   alt="Karma" 
                   style={{ 
                     width: '18px', 
