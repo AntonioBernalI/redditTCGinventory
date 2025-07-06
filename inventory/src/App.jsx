@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { CARD_DATA, getCardByKey } from './data/cardData'
 import MainDiv from './components/MainDiv'
 import ToastNotification from './components/ToastNotification'
 import FullscreenBackdrop from './components/FullscreenBackdrop'
@@ -8,85 +9,58 @@ function App() {
   const [activeTab, setActiveTab] = useState('collection')
   const [toast, setToast] = useState(null)
   const [inventory, setInventory] = useState([
-    // Pre-populated inventory for demonstration
+    // Pre-populated inventory using card data
     {
       id: 1,
-      name: 'Legendary Dragon Card',
-      image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
-      type: 'collection',
-      rarity: 'legendary',
+      ...getCardByKey('spez'),
       quantity: 1,
       dateAcquired: '2024-01-15'
     },
     {
       id: 2,
-      name: 'Fire Elemental',
-      image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
-      type: 'collection',
-      rarity: 'rare',
+      ...getCardByKey('angrysnoo'),
       quantity: 2,
       dateAcquired: '2024-01-10'
     },
     {
       id: 3,
-      name: 'Water Spirit',
-      image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
-      type: 'collection',
-      rarity: 'rare',
+      ...getCardByKey('ghostsnoo'),
       quantity: 1,
       dateAcquired: '2024-01-08'
     },
     {
       id: 4,
-      name: 'Wind Dancer',
-      image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
-      type: 'characters',
-      rarity: 'uncommon',
+      ...getCardByKey('devvitduck'),
       quantity: 3,
       dateAcquired: '2024-01-05'
     },
     {
       id: 5,
-      name: 'Shadow Assassin',
-      image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
-      type: 'characters',
-      rarity: 'epic',
+      ...getCardByKey('mod'),
       quantity: 1,
       dateAcquired: '2024-01-12'
     },
     {
       id: 6,
-      name: 'Golden Trophy',
-      image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
-      type: 'prizes',
-      rarity: 'legendary',
+      ...getCardByKey('normalprize'),
       quantity: 1,
       dateAcquired: '2024-01-14'
     },
     {
       id: 7,
-      name: 'Silver Medal',
-      image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
-      type: 'prizes',
-      rarity: 'rare',
+      ...getCardByKey('karmaprize'),
       quantity: 2,
       dateAcquired: '2024-01-11'
     },
     {
       id: 8,
-      name: 'Fire Burst',
-      image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
-      type: 'effects',
-      rarity: 'uncommon',
+      ...getCardByKey('upvote'),
       quantity: 4,
       dateAcquired: '2024-01-09'
     },
     {
       id: 9,
-      name: 'Lightning Strike',
-      image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400',
-      type: 'effects',
-      rarity: 'epic',
+      ...getCardByKey('banhammer'),
       quantity: 1,
       dateAcquired: '2024-01-13'
     }

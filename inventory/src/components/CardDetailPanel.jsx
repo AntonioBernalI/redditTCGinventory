@@ -1,4 +1,5 @@
 import './CardDetailPanel.css'
+import { CARD_DATA } from '../data/cardData'
 
 const CardDetailPanel = ({ card, onClose }) => {
   const rarityColors = {
@@ -79,12 +80,33 @@ const CardDetailPanel = ({ card, onClose }) => {
                 <span className="stat-value">{card.price.toLocaleString()} 💰</span>
               </div>
             )}
+            
+            {card.hp && (
+              <div className="detail-stat">
+                <span className="stat-label">HP:</span>
+                <span className="stat-value">{card.hp}</span>
+              </div>
+            )}
+            
+            {card.attacks && card.attacks.length > 0 && (
+              <div className="detail-stat">
+                <span className="stat-label">ATTACKS:</span>
+                <span className="stat-value">{card.attacks.join(', ')}</span>
+              </div>
+            )}
+            
+            {card.attackCost && card.attackCost.length > 0 && (
+              <div className="detail-stat">
+                <span className="stat-label">ATTACK COST:</span>
+                <span className="stat-value">{card.attackCost.join(', ')} Karma</span>
+              </div>
+            )}
           </div>
           
           <div className="detail-description">
-            <h5>Description</h5>
+            <h5>{card.effect ? 'Effect' : 'Description'}</h5>
             <p>
-              This {card.rarity} {card.type} is a valuable addition to your collection. 
+              {card.effect || `This ${card.rarity} ${card.type} is a valuable addition to your collection.`}
               {card.quantity > 1 && ` You own ${card.quantity} copies of this card.`}
             </p>
           </div>
