@@ -1,13 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { CARD_DATA, getCardByKey } from './data/cardData'
 import MainDiv from './components/MainDiv'
 import ToastNotification from './components/ToastNotification'
 import FullscreenBackdrop from './components/FullscreenBackdrop'
 import './App.css'
 
+function deepFindMessage(obj) {
+  if (!obj || typeof obj !== "object") return undefined;
+  if ("message" in obj) return obj.message;
+
+  if ("data" in obj) return deepFindMessage(obj.data);
+
+  return undefined;
+}
+
 function App() {
   const [activeTab, setActiveTab] = useState('collection')
   const [toast, setToast] = useState(null)
+  const [karma, setKarma] = useState("loading...")
   const [inventory, setInventory] = useState([
     // Pre-populated inventory using card data
     {
@@ -73,6 +83,31 @@ function App() {
   ])
   const [selectedCard, setSelectedCard] = useState(null)
 
+  useEffect(() => {
+    // Send webview_ready_inventory message after mount
+    window.parent.postMessage(
+      {
+        type: "webview_ready_inventory",
+        data: {},
+      },
+      "*"
+    );
+    
+    const handleMessage = (event) => { 
+      const message = deepFindMessage(event.data);
+      if (!message) return;
+      const { type, data } = message;
+      if (type === "balance_update") {
+        setKarma(data);
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => {
+      window.removeEventListener("message", handleMessage);
+    };
+  }, []);
+
   const showToast = (message, type = 'success') => {
     setToast({ message, type })
     setTimeout(() => setToast(null), 3000)
@@ -121,7 +156,7 @@ function App() {
               <span className="stat-label">TOTAL CARDS</span>
             </div>
             <div className="sidebar-stat">
-              <span className="stat-number">{inventory.reduce((sum, item) => sum + (item.karma || 0) * item.quantity, 0).toLocaleString()}</span>
+              <span className="stat-number">{typeof karma === 'string' ? karma : karma.toLocaleString()}</span>
               <span className="stat-label">
                 <img 
                   src="/src/assets/Karma.png" 
