@@ -74,10 +74,10 @@ const CardDetailPanel = ({ card, onClose }) => {
               </span>
             </div>
             
-            {card.price && (
+            {card.karma && (
               <div className="detail-stat">
-                <span className="stat-label">VALUE:</span>
-                <span className="stat-value">{card.price.toLocaleString()} 💰</span>
+                <span className="stat-label">KARMA:</span>
+                <span className="stat-value">{card.karma.toLocaleString()} ⬆️</span>
               </div>
             )}
             

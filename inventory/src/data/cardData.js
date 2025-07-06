@@ -9,6 +9,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Attached card's damage is increased by 10 %.",
     rarity: "common",
+    karma: 5,
     image: "/src/assets/upvote.png"
   },
   downvote: {
@@ -19,6 +20,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Attached card takes 10 % less damage.",
     rarity: "common",
+    karma: 5,
     image: "/src/assets/downvote.png"
   },
   karmagun: {
@@ -29,6 +31,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Attached card's attack damage is increased by its current Karma.",
     rarity: "uncommon",
+    karma: 15,
     image: "/src/assets/karmagun.png"
   },
   banhammer: {
@@ -39,6 +42,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Each attack also reduces the opponent's Karma by 50 %.",
     rarity: "rare",
+    karma: 50,
     image: "/src/assets/banhammer.png"
   },
   potion: {
@@ -49,6 +53,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Opposing attacks against the attached card are reduced by 10 %.",
     rarity: "rare",
+    karma: 45,
     image: "/src/assets/potion.png"
   },
   repost: {
@@ -59,6 +64,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Damage dealt to attached card is converted into Karma.",
     rarity: "uncommon",
+    karma: 20,
     image: "/src/assets/repost.png"
   },
   comment: {
@@ -69,6 +75,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Damage dealt to attached card is converted into HP.",
     rarity: "uncommon",
+    karma: 18,
     image: "/src/assets/comment.png"
   },
   devvitduck: {
@@ -79,6 +86,7 @@ export const CARD_DATA = {
     attackCost: [2],
     effect: "help — Increases HP of your attack cards by 10.",
     rarity: "uncommon",
+    karma: 25,
     image: "/src/assets/devvitduck.png"
   },
   angrysnoo: {
@@ -89,6 +97,7 @@ export const CARD_DATA = {
     attackCost: [2, 1],
     effect: "mitosis — Double this card's HP. angry attack — Deal 10 damage to all opponent defense cards.",
     rarity: "rare",
+    karma: 60,
     image: "/src/assets/angrysnoo.png"
   },
   snoo: {
@@ -99,6 +108,7 @@ export const CARD_DATA = {
     attackCost: [1],
     effect: "antenna strike — Deal 10 HP damage.",
     rarity: "common",
+    karma: 10,
     image: "/src/assets/snoo.png"
   },
   mod: {
@@ -109,6 +119,7 @@ export const CARD_DATA = {
     attackCost: [1],
     effect: "Ban — Removes 2 Karma from the attacked card.",
     rarity: "uncommon",
+    karma: 30,
     image: "/src/assets/mod.png"
   },
   karmathief: {
@@ -119,6 +130,7 @@ export const CARD_DATA = {
     attackCost: [1],
     effect: "Rob — Steal 2 Karma from target card and add to this card.",
     rarity: "uncommon",
+    karma: 35,
     image: "/src/assets/karmathief.png"
   },
   copypastawarrior: {
@@ -129,6 +141,7 @@ export const CARD_DATA = {
     attackCost: [2, 2],
     effect: "Ctrl+V — Deal 10 damage. Ctrl+C — Increase this card's HP by 10.",
     rarity: "uncommon",
+    karma: 28,
     image: "/src/assets/copypastawarrior.png"
   },
   ghostsnoo: {
@@ -139,6 +152,7 @@ export const CARD_DATA = {
     attackCost: [5],
     effect: "Boo — 160 damage.",
     rarity: "rare",
+    karma: 75,
     image: "/src/assets/ghostsnoo.png"
   },
   spez: {
@@ -149,6 +163,7 @@ export const CARD_DATA = {
     attackCost: [4, 2],
     effect: "Permaban — 50 damage. Invest — Heal 50 HP from this card.",
     rarity: "rare",
+    karma: 80,
     image: "/src/assets/spez.png"
   },
   bot: {
@@ -159,6 +174,7 @@ export const CARD_DATA = {
     attackCost: [2],
     effect: "Spam — Deal 20 damage and all opponent defense cards take 10 HP damage.",
     rarity: "uncommon",
+    karma: 22,
     image: "/src/assets/bot.png"
   },
   admin: {
@@ -169,6 +185,7 @@ export const CARD_DATA = {
     attackCost: [3],
     effect: "Announcement — Deal 20 damage and all opponent cards lose 10 % Karma.",
     rarity: "uncommon",
+    karma: 40,
     image: "/src/assets/admin.png"
   },
   normalprize: {
@@ -179,6 +196,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Congratulations — (unspecified benefit).",
     rarity: "common",
+    karma: 8,
     image: "/src/assets/normalprize.png"
   },
   bloodyprize: {
@@ -189,6 +207,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Everyone loses 60 Karma.",
     rarity: "uncommon",
+    karma: 25,
     image: "/src/assets/bloodyprize.png"
   },
   snooprize: {
@@ -199,6 +218,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Everyone gets 10 Snoo cards.",
     rarity: "uncommon",
+    karma: 30,
     image: "/src/assets/snooprize.png"
   },
   karmaprize: {
@@ -209,6 +229,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Everyone gains 50 Karma points.",
     rarity: "uncommon",
+    karma: 35,
     image: "/src/assets/karmaprize.png"
   },
   nothing: {
@@ -219,6 +240,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "No one receives anything.",
     rarity: "uncommon",
+    karma: 15,
     image: "/src/assets/nothing.png"
   },
   everything: {
@@ -229,6 +251,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "All players gain every prize from all Prize cards.",
     rarity: "rare",
+    karma: 100,
     image: "/src/assets/everything.png"
   },
   boosterpack: {
@@ -239,6 +262,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Open this pack to receive 5 additional random cards for your collection. Each pack contains a mix of characters, effects, and prizes with varying rarities.",
     rarity: "common",
+    karma: 12,
     image: "/src/assets/sobre.png"
   }
 }

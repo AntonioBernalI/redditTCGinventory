@@ -121,8 +121,8 @@ function App() {
               <span className="stat-label">TOTAL CARDS</span>
             </div>
             <div className="sidebar-stat">
-              <span className="stat-number">{inventory.reduce((sum, item) => sum + (item.price || 0) * item.quantity, 0).toLocaleString()}</span>
-              <span className="stat-label">COLLECTION VALUE 💰</span>
+              <span className="stat-number">{inventory.reduce((sum, item) => sum + (item.karma || 0) * item.quantity, 0).toLocaleString()}</span>
+              <span className="stat-label">KARMA ⬆️</span>
             </div>
           </div>
           
