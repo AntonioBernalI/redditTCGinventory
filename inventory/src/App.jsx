@@ -44,26 +44,6 @@ function App() {
     return cardList
   }
 
-  // Send inventory update to parent before page unload
-  useEffect(() => {
-    const handleBeforeUnload = (e) => {
-      // Convert current inventory to card list format
-      const cardList = convertInventoryToCardList(inventory)
-      
-      // Send inventory update to parent
-      window.parent.postMessage({
-        type: 'inventory_update',
-        data: cardList
-      }, '*')
-      
-      e.preventDefault()
-      e.returnValue = ''
-    }
-
-    window.addEventListener('beforeunload', handleBeforeUnload)
-    return () => window.removeEventListener('beforeunload', handleBeforeUnload)
-  }, [inventory])
-
   useEffect(() => {
     // Show loading toast initially
     setToast({ message: 'Loading inventory...', type: 'info' })
@@ -192,17 +172,15 @@ function App() {
         }
       })
       
+      // Send updated inventory to parent immediately after pack opening
+      const cardList = convertInventoryToCardList(updatedInventory)
+      window.parent.postMessage({
+        type: 'inventory_update',
+        data: cardList
+      }, '*')
+      
       return updatedInventory
     })
-    
-    // Send updated inventory to parent immediately after pack opening
-    setTimeout(() => {
-      setInventory(currentInventory => {
-        const cardList = convertInventoryToCardList(currentInventory)
-        window.parent.postMessage({ type: 'inventory_update', data: cardList }, '*')
-        return currentInventory
-      })
-    }, 100)
     
     // Close the card detail panel
     setSelectedCard(null)
