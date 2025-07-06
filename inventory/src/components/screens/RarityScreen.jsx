@@ -5,7 +5,7 @@ import './RarityScreen.css'
 const RarityScreen = ({ inventory, selectedCard, setSelectedCard }) => {
   const rarityOrder = ['legendary', 'epic', 'rare', 'uncommon', 'common']
   const rarityColors = {
-    common: '#000000',
+    common: '#888888',
     uncommon: '#ffffff',
     rare: '#ffff00',
     epic: '#9932cc',

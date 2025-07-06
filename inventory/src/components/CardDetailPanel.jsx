@@ -3,7 +3,7 @@ import { CARD_DATA } from '../data/cardData'
 
 const CardDetailPanel = ({ card, onClose }) => {
   const rarityColors = {
-    common: '#000000',
+    common: '#888888',
     uncommon: '#ffffff',
     rare: '#ffff00',
     epic: '#9932cc',
