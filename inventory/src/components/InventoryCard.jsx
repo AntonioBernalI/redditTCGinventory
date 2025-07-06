@@ -13,6 +13,9 @@ const InventoryCard = ({ item, isSelected, onSelect }) => {
     onSelect(item)
   }
 
+  // Check if this is a booster pack card
+  const isBoosterPack = item.name === "Booster Pack"
+
   return (
     <div 
       className={`inventory-card ${item.rarity} ${isSelected ? 'selected' : ''}`}
@@ -38,15 +41,17 @@ const InventoryCard = ({ item, isSelected, onSelect }) => {
             <span className="info-label">TYPE:</span>
             <span className="info-value">{item.type.toUpperCase()}</span>
           </div>
-          <div className="info-item">
-            <span className="info-label">RARITY:</span>
-            <span 
-              className="info-value"
-              style={{ color: rarityColors[item.rarity] }}
-            >
-              {item.rarity.toUpperCase()}
-            </span>
-          </div>
+          {!isBoosterPack && (
+            <div className="info-item">
+              <span className="info-label">RARITY:</span>
+              <span 
+                className="info-value"
+                style={{ color: rarityColors[item.rarity] }}
+              >
+                {item.rarity.toUpperCase()}
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </div>
