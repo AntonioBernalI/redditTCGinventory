@@ -18,12 +18,84 @@ function App() {
   const [activeTab, setActiveTab] = useState('collection')
   const [toast, setToast] = useState(null)
   const [karma, setKarma] = useState("loading...")
-  const [inventory, setInventory] = useState([])
+  
+  // TODO: REMOVE MOCK DATA - This is only for testing
+  const [inventory, setInventory] = useState([
+    // Mock cards for testing - REMOVE WHEN REAL DATA IS IMPLEMENTED
+    {
+      id: 1,
+      ...getCardByKey('spez'),
+      quantity: 1,
+      dateAcquired: '2024-01-15'
+    },
+    {
+      id: 2,
+      ...getCardByKey('angrysnoo'),
+      quantity: 2,
+      dateAcquired: '2024-01-10'
+    },
+    {
+      id: 3,
+      ...getCardByKey('ghostsnoo'),
+      quantity: 1,
+      dateAcquired: '2024-01-08'
+    },
+    {
+      id: 4,
+      ...getCardByKey('devvitduck'),
+      quantity: 3,
+      dateAcquired: '2024-01-05'
+    },
+    {
+      id: 5,
+      ...getCardByKey('mod'),
+      quantity: 1,
+      dateAcquired: '2024-01-12'
+    },
+    {
+      id: 6,
+      ...getCardByKey('normalprize'),
+      quantity: 1,
+      dateAcquired: '2024-01-14'
+    },
+    {
+      id: 7,
+      ...getCardByKey('karmaprize'),
+      quantity: 2,
+      dateAcquired: '2024-01-11'
+    },
+    {
+      id: 8,
+      ...getCardByKey('upvote'),
+      quantity: 4,
+      dateAcquired: '2024-01-09'
+    },
+    {
+      id: 9,
+      ...getCardByKey('banhammer'),
+      quantity: 1,
+      dateAcquired: '2024-01-13'
+    },
+    {
+      id: 10,
+      ...getCardByKey('boosterpack'),
+      quantity: 3,
+      dateAcquired: '2024-01-16'
+    }
+  ])
+  
   const [isLoadingCards, setIsLoadingCards] = useState(true)
   const [selectedCard, setSelectedCard] = useState(null)
 
   useEffect(() => {
-    // Show loading toast initially
+    // TODO: REMOVE - Mock data setup for testing
+    // Simulate loading completion after a short delay
+    setTimeout(() => {
+      setIsLoadingCards(false)
+      setKarma(12500) // Mock karma value
+    }, 1000)
+    
+    // Show loading toast initially (will be hidden by mock timeout)
     setToast({ message: 'Loading...', type: 'info' })
     
     // Send webview_ready_inventory message after mount
