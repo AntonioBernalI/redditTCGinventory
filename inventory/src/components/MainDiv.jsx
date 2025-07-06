@@ -1,14 +1,9 @@
-import Header from './Header'
-import Navigation from './Navigation'
 import CollectionScreen from './screens/CollectionScreen'
 import RarityScreen from './screens/RarityScreen'
 import RecentScreen from './screens/RecentScreen'
 import './MainDiv.css'
 
-const MainDiv = ({ activeTab, setActiveTab, inventory, selectedCard, setSelectedCard, addToInventory }) => {
-  const totalCards = inventory.reduce((sum, item) => sum + item.quantity, 0)
-  const totalValue = inventory.reduce((sum, item) => sum + (item.price || 0) * item.quantity, 0)
-
+const MainDiv = ({ activeTab, inventory, selectedCard, setSelectedCard }) => {
   const renderScreen = () => {
     switch (activeTab) {
       case 'collection':
@@ -48,8 +43,6 @@ const MainDiv = ({ activeTab, setActiveTab, inventory, selectedCard, setSelected
 
   return (
     <div className="main-div">
-      <Header totalCards={totalCards} totalValue={totalValue} />
-      <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className="content-screen">
         {renderScreen()}
       </div>

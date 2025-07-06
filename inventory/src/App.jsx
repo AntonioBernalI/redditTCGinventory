@@ -85,14 +85,65 @@ function App() {
 
   return (
     <>
-      <MainDiv 
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        inventory={inventory}
-        selectedCard={selectedCard}
-        setSelectedCard={setSelectedCard}
-        addToInventory={addToInventory}
-      />
+      <div className="app-layout">
+        <div className="left-sidebar">
+          <div className="sidebar-header">
+            <img 
+              src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400" 
+              alt="Reddit TCG Inventory" 
+              className="sidebar-logo"
+            />
+            <h1 className="sidebar-title">REDDIT TCG INVENTORY</h1>
+          </div>
+          
+          <div className="sidebar-stats">
+            <div className="sidebar-stat">
+              <span className="stat-number">{inventory.length}</span>
+              <span className="stat-label">UNIQUE CARDS</span>
+            </div>
+            <div className="sidebar-stat">
+              <span className="stat-number">{inventory.reduce((sum, item) => sum + item.quantity, 0)}</span>
+              <span className="stat-label">TOTAL CARDS</span>
+            </div>
+            <div className="sidebar-stat">
+              <span className="stat-number">{inventory.reduce((sum, item) => sum + (item.price || 0) * item.quantity, 0).toLocaleString()}</span>
+              <span className="stat-label">COLLECTION VALUE 💰</span>
+            </div>
+          </div>
+          
+          <div className="sidebar-navigation">
+            <button
+              className={`sidebar-nav-button ${activeTab === 'collection' ? 'active' : ''}`}
+              onClick={() => setActiveTab('collection')}
+            >
+              MY COLLECTION
+            </button>
+            <button
+              className={`sidebar-nav-button ${activeTab === 'rarity' ? 'active' : ''}`}
+              onClick={() => setActiveTab('rarity')}
+            >
+              BY RARITY
+            </button>
+            <button
+              className={`sidebar-nav-button ${activeTab === 'recent' ? 'active' : ''}`}
+              onClick={() => setActiveTab('recent')}
+            >
+              RECENTLY ADDED
+            </button>
+          </div>
+        </div>
+        
+        <div className="main-content">
+          <MainDiv 
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            inventory={inventory}
+            selectedCard={selectedCard}
+            setSelectedCard={setSelectedCard}
+            addToInventory={addToInventory}
+          />
+        </div>
+      </div>
       <FullscreenBackdrop />
       {toast && (
         <ToastNotification 

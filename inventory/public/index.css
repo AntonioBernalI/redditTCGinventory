@@ -11,8 +11,5 @@ html, body, #root {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
 }
