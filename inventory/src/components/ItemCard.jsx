@@ -2,9 +2,9 @@ import './ItemCard.css'
 
 const ItemCard = ({ item, onPurchase, isOwned = false }) => {
   const rarityColors = {
-    common: '#888888',
-    uncommon: '#32cd32',
-    rare: '#4169e1',
+    common: '#000000',
+    uncommon: '#ffffff',
+    rare: '#ffff00',
     epic: '#9932cc',
     legendary: '#ffd700'
   }
