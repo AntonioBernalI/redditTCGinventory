@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import MainDiv from './components/MainDiv'
-import SnooCharacter from './components/SnooCharacter'
 import ToastNotification from './components/ToastNotification'
 import FullscreenBackdrop from './components/FullscreenBackdrop'
 import './App.css'
@@ -28,7 +27,6 @@ function App() {
         purchaseItem={purchaseItem}
         inventory={inventory}
       />
-      <SnooCharacter />
       <FullscreenBackdrop />
       {toast && (
         <ToastNotification 
