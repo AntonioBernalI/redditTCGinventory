@@ -1,28 +1,54 @@
-import { useState } from 'react'
 import Header from './Header'
 import Navigation from './Navigation'
-import FeaturedScreen from './screens/FeaturedScreen'
-import CardsScreen from './screens/CardsScreen'
-import PacksScreen from './screens/PacksScreen'
+import CollectionScreen from './screens/CollectionScreen'
+import RarityScreen from './screens/RarityScreen'
+import RecentScreen from './screens/RecentScreen'
 import './MainDiv.css'
 
-const MainDiv = ({ activeTab, setActiveTab, purchaseItem, inventory }) => {
+const MainDiv = ({ activeTab, setActiveTab, inventory, selectedCard, setSelectedCard, addToInventory }) => {
+  const totalCards = inventory.reduce((sum, item) => sum + item.quantity, 0)
+  const totalValue = inventory.reduce((sum, item) => sum + (item.price || 0) * item.quantity, 0)
+
   const renderScreen = () => {
     switch (activeTab) {
-      case 'featured':
-        return <FeaturedScreen purchaseItem={purchaseItem} />
-      case 'cards':
-        return <CardsScreen purchaseItem={purchaseItem} inventory={inventory} />
-      case 'packs':
-        return <PacksScreen purchaseItem={purchaseItem} />
+      case 'collection':
+        return (
+          <CollectionScreen 
+            inventory={inventory} 
+            selectedCard={selectedCard}
+            setSelectedCard={setSelectedCard}
+          />
+        )
+      case 'rarity':
+        return (
+          <RarityScreen 
+            inventory={inventory}
+            selectedCard={selectedCard}
+            setSelectedCard={setSelectedCard}
+          />
+        )
+      case 'recent':
+        return (
+          <RecentScreen 
+            inventory={inventory}
+            selectedCard={selectedCard}
+            setSelectedCard={setSelectedCard}
+          />
+        )
       default:
-        return <FeaturedScreen purchaseItem={purchaseItem} />
+        return (
+          <CollectionScreen 
+            inventory={inventory}
+            selectedCard={selectedCard}
+            setSelectedCard={setSelectedCard}
+          />
+        )
     }
   }
 
   return (
     <div className="main-div">
-      <Header />
+      <Header totalCards={totalCards} totalValue={totalValue} />
       <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className="content-screen">
         {renderScreen()}

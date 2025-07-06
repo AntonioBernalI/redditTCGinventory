@@ -2,9 +2,9 @@ import './Navigation.css'
 
 const Navigation = ({ activeTab, setActiveTab }) => {
   const tabs = [
-    { id: 'featured', label: 'FEATURED' },
-    { id: 'cards', label: 'CARDS' },
-    { id: 'packs', label: 'PACKS' }
+    { id: 'collection', label: 'MY COLLECTION' },
+    { id: 'rarity', label: 'BY RARITY' },
+    { id: 'recent', label: 'RECENTLY ADDED' }
   ]
 
   return (
