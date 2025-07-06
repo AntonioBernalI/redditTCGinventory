@@ -50,7 +50,7 @@
   height: 240px;
   overflow: hidden;
   border-radius: 15px 15px 0 0;
-  background: white;
+  background: url('/bg.png') center/cover, white;
   display: flex;
   align-items: center;
   justify-content: center;

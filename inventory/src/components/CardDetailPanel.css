@@ -104,7 +104,7 @@
   border-radius: 15px;
   overflow: hidden;
   border: 2px solid rgba(255, 255, 255, 0.3);
-  background: white;
+  background: url('/bg.png') center/cover, white;
   display: flex;
   align-items: center;
   justify-content: center;
