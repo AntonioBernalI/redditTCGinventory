@@ -111,20 +111,20 @@
   padding: 25px 20px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 8px;
   flex: 1;
   position: relative;
   z-index: 2;
 }
 
 .sidebar-nav-button {
-  padding: 15px 20px;
+  padding: 10px 15px;
   border: 3px solid #ff5801;
   border-radius: 20px;
   background: linear-gradient(145deg, rgba(255, 88, 1, 0.8), rgba(255, 69, 0, 0.9));
   color: white;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
@@ -228,14 +228,14 @@
   .sidebar-navigation {
     flex-direction: row;
     padding: 10px 15px;
-    gap: 4px;
+    gap: 2px;
     flex: 0;
   }
   
   .sidebar-nav-button {
     flex: 1;
-    padding: 6px 8px;
-    font-size: 9px;
+    padding: 4px 6px;
+    font-size: 8px;
     letter-spacing: 0.5px;
     min-width: 0;
     white-space: nowrap;
@@ -279,12 +279,12 @@
   
   .sidebar-navigation {
     padding: 8px 12px;
-    gap: 3px;
+    gap: 1px;
   }
   
   .sidebar-nav-button {
-    padding: 5px 6px;
-    font-size: 8px;
+    padding: 3px 4px;
+    font-size: 7px;
   }
   
   .main-content {
