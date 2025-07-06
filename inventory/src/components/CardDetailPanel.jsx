@@ -24,7 +24,7 @@ const CardDetailPanel = ({ card, onClose }) => {
           <img 
             src={card.image} 
             alt={card.name}
-            className="detail-image"
+            className={`detail-image ${card.type === 'prizes' ? 'prize-card' : ''}`}
           />
           <div 
             className="detail-rarity-badge"
