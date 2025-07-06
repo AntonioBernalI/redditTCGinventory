@@ -9,7 +9,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Attached card's damage is increased by 10 %.",
     rarity: "common",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/upvote.png"
   },
   downvote: {
     name: "Downvote",
@@ -19,7 +19,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Attached card takes 10 % less damage.",
     rarity: "common",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/downvote.png"
   },
   karmagun: {
     name: "Karma Gun",
@@ -29,7 +29,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Attached card's attack damage is increased by its current Karma.",
     rarity: "uncommon",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/karmagun.png"
   },
   banhammer: {
     name: "Ban Hammer",
@@ -39,7 +39,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Each attack also reduces the opponent's Karma by 50 %.",
     rarity: "rare",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/banhammer.png"
   },
   potion: {
     name: "Potion",
@@ -49,7 +49,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Opposing attacks against the attached card are reduced by 10 %.",
     rarity: "rare",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/potion.png"
   },
   repost: {
     name: "Repost",
@@ -59,7 +59,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Damage dealt to attached card is converted into Karma.",
     rarity: "uncommon",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/repost.png"
   },
   comment: {
     name: "Comment",
@@ -69,7 +69,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Damage dealt to attached card is converted into HP.",
     rarity: "uncommon",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/comment.png"
   },
   devvitduck: {
     name: "Devvit duck",
@@ -79,7 +79,7 @@ export const CARD_DATA = {
     attackCost: [2],
     effect: "help — Increases HP of your attack cards by 10.",
     rarity: "uncommon",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/devvitduck.png"
   },
   angrysnoo: {
     name: "Angry Snoo",
@@ -89,7 +89,7 @@ export const CARD_DATA = {
     attackCost: [2, 1],
     effect: "mitosis — Double this card's HP. angry attack — Deal 10 damage to all opponent defense cards.",
     rarity: "rare",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/angrysnoo.png"
   },
   snoo: {
     name: "Snoo",
@@ -99,7 +99,7 @@ export const CARD_DATA = {
     attackCost: [1],
     effect: "antenna strike — Deal 10 HP damage.",
     rarity: "common",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/snoo.png"
   },
   mod: {
     name: "Mod",
@@ -109,7 +109,7 @@ export const CARD_DATA = {
     attackCost: [1],
     effect: "Ban — Removes 2 Karma from the attacked card.",
     rarity: "uncommon",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/mod.png"
   },
   karmathief: {
     name: "Karma Thief",
@@ -119,7 +119,7 @@ export const CARD_DATA = {
     attackCost: [1],
     effect: "Rob — Steal 2 Karma from target card and add to this card.",
     rarity: "uncommon",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/karmathief.png"
   },
   copypastawarrior: {
     name: "Copypasta warrior",
@@ -129,7 +129,7 @@ export const CARD_DATA = {
     attackCost: [2, 2],
     effect: "Ctrl+V — Deal 10 damage. Ctrl+C — Increase this card's HP by 10.",
     rarity: "uncommon",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/copypastawarrior.png"
   },
   ghostsnoo: {
     name: "Ghost Snoo",
@@ -139,7 +139,7 @@ export const CARD_DATA = {
     attackCost: [5],
     effect: "Boo — 160 damage.",
     rarity: "rare",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/ghostsnoo.png"
   },
   spez: {
     name: "Spez",
@@ -149,7 +149,7 @@ export const CARD_DATA = {
     attackCost: [4, 2],
     effect: "Permaban — 50 damage. Invest — Heal 50 HP from this card.",
     rarity: "rare",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/spez.png"
   },
   bot: {
     name: "Bot",
@@ -159,7 +159,7 @@ export const CARD_DATA = {
     attackCost: [2],
     effect: "Spam — Deal 20 damage and all opponent defense cards take 10 HP damage.",
     rarity: "uncommon",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/bot.png"
   },
   admin: {
     name: "Admin",
@@ -169,7 +169,7 @@ export const CARD_DATA = {
     attackCost: [3],
     effect: "Announcement — Deal 20 damage and all opponent cards lose 10 % Karma.",
     rarity: "uncommon",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/admin.png"
   },
   normalprize: {
     name: "Normal Prize",
@@ -179,7 +179,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Congratulations — (unspecified benefit).",
     rarity: "common",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/normalprize.png"
   },
   bloodyprize: {
     name: "Bloody Prize",
@@ -189,7 +189,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Everyone loses 60 Karma.",
     rarity: "uncommon",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/bloodyprize.png"
   },
   snooprize: {
     name: "Snoo Prize",
@@ -199,7 +199,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Everyone gets 10 Snoo cards.",
     rarity: "uncommon",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/snooprize.png"
   },
   karmaprize: {
     name: "Karma Prize",
@@ -209,7 +209,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "Everyone gains 50 Karma points.",
     rarity: "uncommon",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/karmaprize.png"
   },
   nothing: {
     name: "Nothing",
@@ -219,7 +219,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "No one receives anything.",
     rarity: "uncommon",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/nothing.png"
   },
   everything: {
     name: "Everything",
@@ -229,7 +229,7 @@ export const CARD_DATA = {
     attackCost: [],
     effect: "All players gain every prize from all Prize cards.",
     rarity: "rare",
-    image: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400"
+    image: "/src/assets/everything.png"
   }
 }
 
