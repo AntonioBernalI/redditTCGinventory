@@ -75,7 +75,8 @@
   position: relative;
   z-index: 2;
   overflow-y: auto;
-  max-height: calc(100vh - 120px);
+  height: 500px;
+  max-height: 500px;
 }
 
 .panel-content::-webkit-scrollbar {
@@ -242,7 +243,8 @@
   
   .panel-content {
     overflow-y: auto;
-    max-height: calc(100vh - 80px);
+    height: calc(100vh - 120px);
+    max-height: calc(100vh - 120px);
     flex: 1;
   }
   
