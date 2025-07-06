@@ -70,6 +70,9 @@ function App() {
         // Process the card list and create inventory
         const cardList = data; // Array of card keys like ["spez", "ghostsnoo", "angrysnoo", ...]
         
+        // Debug: Log the received card list to see what pack keys are being sent
+        console.log("Received card list:", cardList);
+        
         // Count occurrences of each card
         const cardCounts = cardList.reduce((acc, cardKey) => {
           acc[cardKey] = (acc[cardKey] || 0) + 1;
@@ -80,7 +83,7 @@ function App() {
         const newInventory = Object.entries(cardCounts).map(([cardKey, quantity], index) => {
           const cardData = getCardByKey(cardKey);
           if (!cardData) {
-            console.warn(`Card data not found for key: ${cardKey}`);
+            console.warn(`Card data not found for key: "${cardKey}". Available keys:`, Object.keys(CARD_DATA));
             return null;
           }
           

@@ -290,6 +290,29 @@ export const CARD_DATA = {
     rarity: "common",
     karma: 12,
     image: boosterpackImg
+  },
+  // Add alternative key names for packs in case the parent sends different keys
+  pack: {
+    name: "Booster Pack",
+    type: "packs",
+    hp: null,
+    attacks: [],
+    attackCost: [],
+    effect: "Open this pack to receive 5 additional random cards for your collection. Each pack contains a mix of characters, effects, and prizes with varying rarities.",
+    rarity: "common",
+    karma: 12,
+    image: boosterpackImg
+  },
+  sobre: {
+    name: "Booster Pack", 
+    type: "packs",
+    hp: null,
+    attacks: [],
+    attackCost: [],
+    effect: "Open this pack to receive 5 additional random cards for your collection. Each pack contains a mix of characters, effects, and prizes with varying rarities.",
+    rarity: "common",
+    karma: 12,
+    image: boosterpackImg
   }
 }
 
